@@ -1,19 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom'; // * BrowserRouter 불러오기
+// import './index.css';
 import App from './App';
 // import * as serviceWorker from './serviceWorker';
-import { createStore } from 'redux';
-import { Provider } from 'react-redux';
-import rootReducer from './modules';
-import { composeWithDevTools } from 'redux-devtools-extension';
 
-// rootReducer 를 가진 Store 생성
-const store = createStore(rootReducer, composeWithDevTools());
-
+// * App 을 BrowserRouter 로 감싸기
 ReactDOM.render(
-  <Provider store={store}>
+  <BrowserRouter>
     <App />
-  </Provider>,
+  </BrowserRouter>,
   document.getElementById('root')
 );
 
